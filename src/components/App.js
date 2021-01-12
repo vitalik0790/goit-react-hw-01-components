@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 
 import user from '../data/user.json';
 import Profile from './profile/Profile';
@@ -21,7 +22,7 @@ import TransactionHistory from './transactionHistory/TransactionHistory'
 
 const App = () => {
     return (
-        <>
+        <div className="App">
             <Profile
                 name={user.name}
                 tag={user.tag}
@@ -36,7 +37,7 @@ const App = () => {
             <FriendList friends={friends} />
 
             <TransactionHistory items={transactions} />
-        </>
+        </div>
     );
 };
 
