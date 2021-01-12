@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TransactionHistory = () => {
+const TransactionHistory = ({ items }) => {
     return (
         <table className="transaction-history">
             <thead>
@@ -12,11 +12,16 @@ const TransactionHistory = () => {
             </thead>
 
             <tbody>
-                <tr>
-                    <td>Invoice</td>
-                    <td>125</td>
-                    <td>USD</td>
-                </tr>
+                {items.map(item => {
+                    return (
+                        <tr>
+                            <td>{item.type}</td>
+                            <td>{item.amount}</td>
+                            <td>{item.currency}</td>
+                        </tr>
+                    )
+                })}
+
             </tbody>
         </table>
     );
